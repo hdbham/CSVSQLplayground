@@ -98,6 +98,12 @@ if st.button("🏃 Run Query"):
     except Exception as e:
         st.error(f"❌ Query failed: {e}")
 
+st.markdown("""
+---
+#### 📚 Dataset Attribution
+Data sourced from the [Super Store dataset on Kaggle](https://www.kaggle.com/datasets/itssuru/super-store)  
+Originally uploaded by **Suraj Krishna** under a CC0: Public Domain license.
+""")
 # TODOs
 # - streamlit-js-eval to save base64 in localStorage
 # - delete/rename tables
