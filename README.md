@@ -5,6 +5,7 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 > 🛡️ Designed with privacy in mind — intended to evolve toward full client-side persistence using browser storage.
 
 ---
+### 🚀 Live Demo **👉 [Try it on Streamlit Cloud](https://csvsqlplayground.streamlit.app/)** [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://csvsqlplayground.streamlit.app/)
 
 ## 🚀 Features
 
