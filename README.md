@@ -51,4 +51,4 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run main.py
