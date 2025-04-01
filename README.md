@@ -32,7 +32,7 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 - [ ] **HTML Print View**  
   Render query results in a clean printable format
 
-- [ ] **Jupyter-like Cells** via JS `eval()`  
+- [ ] **Jupyter-like Cells** via `eval()`  
   Allow users to write and execute SQL or markdown-like blocks inline
 
 ---
