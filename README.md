@@ -20,7 +20,7 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 
 ## 🛠️ Roadmap / TODO
 
-- [ ] **Integrate [`streamlit-js-eval`](https://github.com/okld/streamlit-js-eval)**  
+- [ ] **Integrate [`streamlit-js-eval`](https://github.com/aghasemi/streamlit_js_eval)**  
   Store uploaded CSVs in browser `localStorage` as base64  
   ➕ Enables user-side privacy and persistence across sessions
 
@@ -44,7 +44,7 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 - ⚡ Streamlit
 - 🦆 DuckDB
 - 🐼 Pandas
-- 🍪 [`streamlit-js-eval`](https://github.com/okld/streamlit-js-eval) *(planned)*
+- 🍪 [`streamlit-js-eval`](https://github.com/aghasemi/streamlit_js_eval) *(planned)*
 
 ---
 
