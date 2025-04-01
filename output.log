@@ -1,0 +1,12 @@
+2025-03-31 17:11:07.699 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-03-31 17:11:07.763 
+  [33m[1mWarning:[0m to view this Streamlit app on a browser, run it with the following
+  command:
+
+    streamlit run main.py [ARGUMENTS]
+2025-03-31 17:11:07.763 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-03-31 17:11:07.763 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-03-31 17:11:07.763 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-03-31 17:11:07.763 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-03-31 17:11:07.764 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-03-31 17:11:07.764 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
