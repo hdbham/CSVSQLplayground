@@ -26,13 +26,27 @@ for file in os.listdir(SAVE_DIR):
 # Upload CSV
 uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
 
+df = None
 if uploaded_file:
-    df = pd.read_csv(uploaded_file, sep=None, engine="python")
+    try:
+        # Try to read using UTF-8
+        df = pd.read_csv(uploaded_file, sep=None, engine="python")
+    except UnicodeDecodeError:
+        # Fallback to latin1
+        uploaded_file.seek(0)
+        df = pd.read_csv(uploaded_file, sep=None, engine="python", encoding="latin1", errors="replace")
+        st.warning("⚠️ Some characters were replaced due to encoding issues.")
+
+    # Clean strings for DuckDB safety
+    df = df.applymap(lambda x: x.encode("utf-8", "replace").decode("utf-8") if isinstance(x, str) else x)
+
     st.dataframe(df.head())
 
+# Table name input
 table_name = st.text_input("Save table as (no spaces):", value="my_table")
 
-if st.button("📅 Register Table"):
+# Save and register table
+if st.button("📅 Register Table") and df is not None:
     save_path = os.path.join(SAVE_DIR, f"{table_name}.csv")
     try:
         df.to_csv(save_path, index=False)
@@ -43,7 +57,6 @@ if st.button("📅 Register Table"):
 
 # Show list of saved tables
 st.markdown("### 📂 Registered DuckDB Tables")
-
 try:
     table_names = st.session_state.con.execute("SHOW TABLES").fetchdf()['name'].tolist()
 
@@ -57,14 +70,20 @@ try:
                 st.dataframe(preview_df)
             except Exception as e:
                 st.warning(f"Preview failed for {table}: {e}")
-
 except Exception as e:
     st.error(f"Failed to fetch tables: {e}")
 
+# SQL input
 st.markdown("### ✍️ Run SQL Query")
-default_query = "SELECT * FROM my_table LIMIT 5"
+default_query = """
+SELECT State, Segment, SUM(Profit) AS profit
+FROM SampleSuperstore
+GROUP BY Segment, State
+ORDER BY profit DESC;
+"""
 query = st.text_area("Write your SQL query here:", value=default_query, height=200)
 
+# Execute SQL
 if st.button("🏃 Run Query"):
     try:
         result = st.session_state.con.execute(query).fetchdf()
@@ -79,9 +98,9 @@ if st.button("🏃 Run Query"):
     except Exception as e:
         st.error(f"❌ Query failed: {e}")
 
-### todo: 
-### integrate streamlit-js-eval to save uploaded CSVs in base64 localstorage
-### Delete / Rename tables
-### integrate openai?
-### print via html
-### use eval to make jupyter like cells
+# TODOs
+# - streamlit-js-eval to save base64 in localStorage
+# - delete/rename tables
+# - integrate OpenAI for prompt-to-SQL
+# - print via HTML
+# - Jupyter-like cell eval
