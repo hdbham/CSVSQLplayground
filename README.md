@@ -5,6 +5,7 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 > 🛡️ Designed with privacy in mind — intended to evolve toward full client-side persistence using browser storage.
 
 ---
+### 🚀 Live Demo **👉 [Try it on Streamlit Cloud](https://csvsqlplayground.streamlit.app/)** [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://csvsqlplayground.streamlit.app/)
 
 ## 🚀 Features
 
@@ -19,7 +20,7 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 
 ## 🛠️ Roadmap / TODO
 
-- [ ] **Integrate [`streamlit-js-eval`](https://github.com/okld/streamlit-js-eval)**  
+- [ ] **Integrate [`streamlit-js-eval`](https://github.com/aghasemi/streamlit_js_eval)**  
   Store uploaded CSVs in browser `localStorage` as base64  
   ➕ Enables user-side privacy and persistence across sessions
 
@@ -32,7 +33,7 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 - [ ] **HTML Print View**  
   Render query results in a clean printable format
 
-- [ ] **Jupyter-like Cells** via JS `eval()`  
+- [ ] **Jupyter-like Cells** via `eval()`  
   Allow users to write and execute SQL or markdown-like blocks inline
 
 ---
@@ -43,7 +44,7 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 - ⚡ Streamlit
 - 🦆 DuckDB
 - 🐼 Pandas
-- 🍪 [`streamlit-js-eval`](https://github.com/okld/streamlit-js-eval) *(planned)*
+- 🍪 [`streamlit-js-eval`](https://github.com/aghasemi/streamlit_js_eval) *(planned)*
 
 ---
 
@@ -51,4 +52,4 @@ A lightweight SQL interface built with Streamlit + DuckDB that lets you upload C
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run main.py
